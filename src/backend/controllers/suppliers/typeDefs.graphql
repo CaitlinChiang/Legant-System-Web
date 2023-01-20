@@ -1,0 +1,27 @@
+type Supplier {
+  _id: ID
+  ageMax: Int
+  ageMin: Int
+  categories: [String]
+  email: String
+  genders: [String]
+  name: String
+  createdAt: String
+  updatedAt: String
+}
+
+extend type Query {
+  get_supplier(_id: ID!): Supplier
+
+  get_suppliers(paginateData: PaginateDataInput): [Supplier]
+
+  get_suppliers_count(paginateData: PaginateDataInput): Int
+}
+
+extend type Mutation {
+  create_supplier(ageMax: Int!, ageMin: Int!, categories: [String], email: String!, genders: [String]!, name: String!): Void
+
+  update_supplier(ageMax: Int!, ageMin: Int!, categories: [String], email: String!, genders: [String]!, name: String!): Supplier
+
+  delete_supplier(_id: ID!): Void
+}

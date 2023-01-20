@@ -1,4 +1,5 @@
 import { ObjectId } from 'mongodb'
+import { PaginateDataArgs } from './common/paginateData'
 import { Category } from '../enums/categories'
 import { Gender } from '../enums/gender'
 
@@ -12,6 +13,14 @@ export interface Supplier {
   name?: string
   createdAt?: Date
   updatedAt?: Date
+}
+
+export interface GetSupplier {
+  _id: ObjectId
+}
+
+export interface GetSuppliers {
+  paginateData?: PaginateDataArgs
 }
 
 export interface CreateSupplier {

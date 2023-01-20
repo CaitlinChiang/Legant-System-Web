@@ -12,7 +12,6 @@ export const uploadImage = async (args: UploadImageArgs): Promise<string> => {
   return await uploadToCloudinary(createReadStream, fileName)
 }
 
-
 // GENERATE FILE NAMES
 const assignFileName = (args: UploadImageArgs) => {
   const { imageType, orderId, productName } = args
@@ -38,7 +37,6 @@ const generateProductImageFileName = (productName: string) => {
 
   return folderName.concat(modifiedProductName)
 }
-
 
 // UPLOAD IMAGE TO CLOUDINARY
 const uploadToCloudinary = async (createReadStream, fileName): Promise<string> => {

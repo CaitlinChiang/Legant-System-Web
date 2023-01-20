@@ -17,7 +17,6 @@ export const correctArgs = (args: any, mutation?: boolean): void => {
   })
 }
 
-
 // CHECK ARGUMENT TYPES
 const isValStringOrNull = (val: any): boolean => {
   if (typeof val === 'string' || val === null) return true
@@ -31,7 +30,6 @@ const isValArray = (val: any): boolean => {
   if (typeof val === 'object' && Array.isArray(val) && val?.length > 0) return true
   return false
 }
-
 
 // MODIFY OBJECTS BASED FROM TYPE
 const modifyArrArgs = (
@@ -51,7 +49,6 @@ const modifyArrArgs = (
 const modifyObjArgs = (obj: any, mutation: boolean): void => {
   Object.keys(obj).forEach((key: string) => modifyArgs(key, obj, mutation))
 }
-
 
 // MODIFICATION OF ARGUMENTS
 const modifyArgs = (key: string, args: any, mutation: boolean): void => {

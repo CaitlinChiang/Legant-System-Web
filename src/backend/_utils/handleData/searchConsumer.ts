@@ -12,5 +12,7 @@ export const searchConsumer = async (
   delete args['$text']
 
   const consumers: Consumer[] = await context.database.consumers.find(args).toArray()
-  args.consumerId = { $in: consumers.map((consumer: Consumer): ObjectId => new ObjectId(consumer._id)) }
+  args.consumerId = {
+    $in: consumers.map((consumer: Consumer): ObjectId => new ObjectId(consumer._id))
+  }
 }

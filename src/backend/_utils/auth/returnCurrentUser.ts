@@ -4,7 +4,10 @@ import { Consumer } from '../../../types/consumer'
 import { Database } from '../../../types/setup/database'
 import { generateJWT, verifyJWT } from './jwt'
 
-export default async (headers, database: Database): Promise<Admin | Consumer | null> => {
+export default async (
+  headers,
+  database: Database
+): Promise<Admin | Consumer | null> => {
   if (!headers.accesstoken) return
 
   const decoded = await verifyJWT(headers.accesstoken)

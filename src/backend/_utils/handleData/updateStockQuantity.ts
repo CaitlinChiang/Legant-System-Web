@@ -10,7 +10,8 @@ export const updateStockQuantity = async (
   for (let i = 0, n = items.length; i < n; i++) {
     const { productId, quantity } = items[i]
 
-    const stockQuantity: number = action === StockQuantityAction.ADD ? quantity : -quantity
+    const stockQuantity: number =
+      action === StockQuantityAction.ADD ? quantity : -quantity
 
     await context.database.products.findOneAndUpdate(
       { _id: productId },

@@ -5,10 +5,10 @@ import { PaymentStatus } from '../enums/paymentStatus'
 
 export interface Payment {
   _id?: ObjectId
+  _orderId?: ObjectId
   amountDue?: number
   imageProofUrl?: string
   paymentMethod?: PaymentMethod
-  shippingFee?: number
   status?: PaymentStatus
   createdAt?: Date
   updatedAt?: Date
@@ -18,13 +18,12 @@ export interface CreatePayment {
   amountDue: number
   imageProof: Promise<FileUpload>
   paymentMethod: PaymentMethod
-  shippingFee: number
   status?: PaymentStatus
   createdAt?: Date
 }
 
 export interface UpdatePayment {
-  _id: ObjectId
+  _orderId: ObjectId
   imageProof?: Promise<FileUpload>
   imageProofUrl?: string
   status: PaymentStatus

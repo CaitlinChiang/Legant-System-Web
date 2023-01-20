@@ -1,0 +1,24 @@
+type Payment {
+  _id: ID
+  _orderId: ID
+  amountDue: Float
+  imageProofUrl: String
+  paymentMethod: String
+  status: String
+  createdAt: String
+  updatedAt: String
+}
+input PaymentInput {
+  amountDue: Float!
+  imageProof: Upload!
+  paymentMethod: String!
+}
+
+extend type Mutation {
+  update_payment(
+    _orderId: ID!
+    imageProof: Upload
+    imageProofUrl: String
+    status: String!
+  ): Payment
+}

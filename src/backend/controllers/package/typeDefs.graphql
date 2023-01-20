@@ -1,0 +1,36 @@
+type Package {
+  _id: ID
+  consumerId: ID
+  items: [PackageItem]
+  quantity: Int
+  totalPrice: Float
+  updatedAt: String
+}
+
+type PackageItem {
+  product: Product
+  productId: ID
+  quantity: Int
+  totalPrice: Float
+}
+input PackageItemInput {
+  productId: ID!
+  quantity: Int!
+  totalPrice: Float!
+}
+
+extend type Query {
+  get_package: Package
+}
+
+extend type Mutation {
+  add_package_item(item: PackageItemInput!): Void
+
+  edit_item_quantity(
+    price: Float!
+    productId: ID!
+    quantity: Int!
+  ): Package
+
+  remove_package_item(productId: ID!): Package
+}

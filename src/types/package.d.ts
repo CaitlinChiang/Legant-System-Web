@@ -4,7 +4,7 @@ import { Product } from './product'
 export interface Package {
   _id?: ObjectId
   consumerId?: ObjectId
-  items?: PackageItem
+  items?: PackageItem[]
   quantity?: number
   totalPrice?: number
   updatedAt?: Date

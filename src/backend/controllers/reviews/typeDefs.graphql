@@ -1,0 +1,23 @@
+type Review {
+  _id: ID
+  consumerId: ID
+  review: String
+  createdAt: String
+  updatedAt: String
+}
+
+extend type Query {
+  get_review(_id: ID!): Review
+
+  get_reviews(paginateData: PaginateDataInput): [Review]
+
+  get_reviews_count(paginateData: PaginateDataInput): Int
+}
+
+extend type Mutation {
+  create_review(consumerId: ID!, review: String!): Void
+
+  update_review(consumerId: ID!, review: String!): Review
+
+  delete_review(_id: ID!): Void
+}

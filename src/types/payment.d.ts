@@ -8,6 +8,7 @@ export interface Payment {
   amountDue?: number
   imageProofUrl?: string
   paymentMethod?: PaymentMethod
+  shippingFee?: number
   status?: PaymentStatus
   createdAt?: Date
   updatedAt?: Date
@@ -16,7 +17,7 @@ export interface Payment {
 export interface CreatePayment {
   amountDue: number
   imageProof: Promise<FileUpload>
-  paymentMethodId: ObjectId
+  paymentMethod: PaymentMethod
   shippingFee: number
   status?: PaymentStatus
   createdAt?: Date

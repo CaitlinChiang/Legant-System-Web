@@ -4,6 +4,11 @@ type Address {
   postalCode: String
   street: String
 }
+type AddressInput {
+  country: String!
+  postalCode: String!
+  street: String!
+}
 
 extend type Mutation {
   update_address(_id: ID!, country: String!, postalCode: String!, street: String!): Address

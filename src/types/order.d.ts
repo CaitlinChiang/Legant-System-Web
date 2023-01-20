@@ -3,6 +3,7 @@ import { Address } from './address'
 import { Consumer } from './consumer'
 import { PackageItem } from './package'
 import { Payment, CreatePayment } from './payment'
+import { DateRange } from './common/dateRange'
 import { PaginateDataArgs } from './common/paginateData'
 import { OrderStatus } from '../enums/orderStatus'
 

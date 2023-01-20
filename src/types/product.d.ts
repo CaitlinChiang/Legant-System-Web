@@ -1,4 +1,5 @@
 import { ObjectId } from 'mongodb'
+import { DateRange } from './common/dateRange'
 import { PaginateDataArgs } from './common/paginateData'
 import { Category } from '../enums/categories'
 

@@ -2,7 +2,7 @@ import { ObjectId } from 'mongodb'
 import { Category } from '../enums/categories'
 import { Gender } from '../enums/gender'
 
-export interface Business {
+export interface Supplier {
   _id?: ObjectId
   ageMax?: number
   ageMin?: number
@@ -14,7 +14,7 @@ export interface Business {
   updatedAt?: Date
 }
 
-export interface CreateBusiness {
+export interface CreateSupplier {
   ageMax: number
   ageMin: number
   categories: Category[]
@@ -24,7 +24,7 @@ export interface CreateBusiness {
   createdAt?: Date
 }
 
-export interface UpdateBusiness {
+export interface UpdateSupplier {
   ageMax: number
   ageMin: number
   categories: Category[]
@@ -34,6 +34,6 @@ export interface UpdateBusiness {
   updatedAt?: Date
 }
 
-export interface DeleteBusiness {
+export interface DeleteSupplier {
   _id: ObjectId
 }

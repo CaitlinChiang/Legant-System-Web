@@ -1,11 +1,11 @@
 import { ObjectId } from 'mongodb'
+import { Supplier } from './supplier'
 import { DateRange } from './common/dateRange'
 import { PaginateDataArgs } from './common/paginateData'
 import { Category } from '../enums/categories'
 
 export interface Product {
   _id?: ObjectId
-  businessId?: ObjectId
   category?: Category
   description?: string
   discount?: number
@@ -14,6 +14,8 @@ export interface Product {
   price?: number
   showPublic?: boolean
   stockQuantity?: number
+  supplier?: Supplier
+  supplierId?: ObjectId
   createdAt?: Date
   updatedAt?: Date
 }
@@ -23,17 +25,16 @@ export interface GetProduct {
 }
 
 export interface GetProducts {
-  businessIds?: ObjectId[]
   categories?: string[]
   dateRange?: DateRange
   discount?: boolean
   paginateData?: PaginateDataArgs
   showPublic?: boolean
   stockQuantity?: StockQuantity
+  supplierId?: ObjectId
 }
 
 export interface CreateProduct {
-  businessId?: ObjectId
   category: Category
   description: string
   discount?: number
@@ -42,11 +43,12 @@ export interface CreateProduct {
   price: number
   showPublic: boolean
   stockQuantity: number
+  supplierId: ObjectId
   createdAt?: Date
 }
 
 export interface UpdateProduct {
-  businessId?: ObjectId
+  _id: ObjectId
   category: Category
   description: string
   discount?: number
@@ -56,6 +58,7 @@ export interface UpdateProduct {
   price: number
   showPublic: boolean
   stockQuantity: number
+  supplierId: ObjectId
   updatedAt?: Date
 }
 

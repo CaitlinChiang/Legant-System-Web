@@ -1,0 +1,69 @@
+type Product {
+  _id: ID
+  category: String
+  description: String
+  discount: Float
+  imageUrl: String
+  name: String
+  price: Float
+  showPublic: Boolean
+  stockQuantity: Int
+  supplier: Supplier
+  supplierId: ID
+  createdAt: String
+  updatedAt: String
+}
+
+extend type Query {
+  get_product(_id: ID!): Product
+
+  get_products(
+    categories: [String]
+    dateRange: DateRangeInput
+    discount: Boolean
+    paginateData: PaginateDataInput
+    showPublic: Boolean
+    stockQuantity: StockQuantityInput
+    supplierId: ID
+  ): [Product]
+
+  get_products_count(
+    categories: [String]
+    dateRange: DateRangeInput
+    discount: Boolean
+    paginateData: PaginateDataInput
+    showPublic: Boolean
+    stockQuantity: StockQuantityInput
+    supplierId: ID
+  ): Int
+}
+
+extend type Mutation {
+  create_product(
+    category: String!
+    description: String!
+    discount: Float
+    image: Upload!
+    name: String!
+    price: Float!
+    showPublic: Boolean!
+    stockQuantity: Int!
+    supplierId: ID!
+  ): Void
+
+  update_product(
+    _id: ID!
+    category: String!
+    description: String!
+    discount: Float
+    image: Upload
+    imageUrl: String!
+    name: String!
+    price: Float!
+    showPublic: Boolean!
+    stockQuantity: Int!
+    supplierId: ID!
+  ): Product
+
+  delete_product(_id: ID!, imageUrl: String!): Void
+}

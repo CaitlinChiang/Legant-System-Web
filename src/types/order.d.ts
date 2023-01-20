@@ -22,10 +22,6 @@ export interface Order {
   updatedAt?: Date
 }
 
-export interface GetOrder {
-  _id: ObjectId
-}
-
 export interface GetOrders {
   consumerId?: ObjectId
   dateRange?: DateRange
@@ -35,7 +31,7 @@ export interface GetOrders {
 
 export interface CreateOrder {
   addressId: ObjectId
-  consumerId: ObjectId
+  consumerId?: ObjectId
   items: PackageItem[]
   payment: CreatePayment
   status?: OrderStatus
@@ -48,6 +44,6 @@ export interface UpdateOrder {
   updatedAt?: Date
 }
 
-export interface DeleteOrderArgs {
+export interface DeleteOrder {
   _id: ObjectId
 }

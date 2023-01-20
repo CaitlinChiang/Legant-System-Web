@@ -1,0 +1,42 @@
+type Order {
+  _id: ID
+  address: Address
+  addressId: ID
+  consumer: Consumer
+  consumerId: ID
+  items: [CartItem]
+  itemsQuantity: Int
+  payment: Payment
+  paymentId: ID
+  status: String
+  createdAt: String
+  updatedAt: String
+}
+
+extend type Query {
+  get_orders(
+    consumerId: ID
+    dateRange: DateRangeInput
+    paginateData: PaginateDataInput
+    statuses: [String]
+  ): [Order]
+
+  get_orders_count(
+    consumerId: ID
+    dateRange: DateRangeInput
+    paginateData: PaginateDataInput
+    statuses: [String]
+  ): Int
+}
+
+extend type Mutation {
+  create_order(
+    addressId: ID!
+    items: [CartItemInput]!
+    payment: PaymentInput!
+  ): Void
+
+  update_order(_id: ID!, status: String!): Order
+
+  delete_order(_id: ID!): Void
+}

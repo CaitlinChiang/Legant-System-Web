@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongodb'
-import { Address } from './address'
+import { Address, CreateAddress } from './address'
 import { PaginateDataArgs } from './common/paginateData'
 import { Gender } from '../enums/gender'
 
@@ -33,7 +33,7 @@ export interface GetConsumers {
 }
 
 export interface CreateConsumer {
-  addressId?: ObjectId
+  address?: CreateAddress
   birthday: Date
   email: string
   firstName: string

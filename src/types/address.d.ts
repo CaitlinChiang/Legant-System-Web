@@ -6,15 +6,12 @@ export interface Address {
   country?: Country
   postalCode?: string
   street?: string
-  createdAt?: Date
-  updatedAt?: Date
 }
 
 export interface CreateAddress {
   country: Country
   postalCode: string
   street: string
-  createdAt?: Date
 }
 
 export interface UpdateAddress {
@@ -22,9 +19,4 @@ export interface UpdateAddress {
   country: Country
   postalCode: string
   street: string
-  updatedAt?: Date
-}
-
-export interface DeleteAddress {
-  _id: ObjectId
 }

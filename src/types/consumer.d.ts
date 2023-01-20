@@ -13,6 +13,8 @@ export interface Consumer {
   gender?: Gender
   lastName?: string
   password?: string
+  token?: string
+  verificationCode?: string
   createdAt?: Date
   updatedAt?: Date
 }

@@ -7,6 +7,8 @@ export interface Admin {
   firstName?: string
   lastName?: string
   password?: string
+  token?: string
+  verificationCode?: string
   createdAt?: Date
   updatedAt?: Date
 }

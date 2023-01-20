@@ -1,0 +1,9 @@
+coverage
+
+*.json
+*.yaml
+.env
+.env.example
+*.md
+
+.next

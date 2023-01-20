@@ -1,0 +1,62 @@
+{
+  "name": "legant-system",
+  "version": "1.0.0",
+  "description": "client-facing and admin-side software for Legant",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec ts-node src/index.ts",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.d.ts --fix && prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaitlinChiang/Legant-System.git"
+  },
+  "author": "Caitlin Chiang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaitlinChiang/Legant-System/issues"
+  },
+  "homepage": "https://github.com/CaitlinChiang/Legant-System#readme",
+  "dependencies": {
+    "@apollo/client": "^3.7.4",
+    "@apollo/link-context": "^2.0.0-beta.3",
+    "@emotion/cache": "^11.10.5",
+    "@emotion/react": "^11.10.5",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/lab": "^5.0.0-alpha.116",
+    "@mui/material": "^5.11.5",
+    "apollo-server-express": "^3.11.1",
+    "apollo-upload-client": "^17.0.0",
+    "aws-sdk": "^2.1298.0",
+    "axios": "^1.2.3",
+    "bcrypt": "^5.1.0",
+    "cloudinary": "^1.33.0",
+    "cors": "^2.8.5",
+    "dataloader": "^2.1.0",
+    "date-fns": "^2.29.3",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.1",
+    "express": "^4.18.2",
+    "graphql": "^16.6.0",
+    "graphql-import-node": "^0.0.5",
+    "graphql-upload": "^16.0.2",
+    "js-cookie": "^3.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "lodash": "^4.17.21",
+    "mongodb": "^4.13.0",
+    "next": "^13.1.3",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.3",
+    "react": "^18.2.0",
+    "react-apexcharts": "^1.4.0",
+    "react-dom": "^18.2.0",
+    "ts-node": "^10.9.1",
+    "validator": "^13.7.0"
+  }
+}

@@ -1,0 +1,64 @@
+type Consumer {
+  _id: ID
+  address: Address
+  addressId: ID
+  birthday: String
+  email: String
+  firstName: String
+  gender: String
+  lastName: String
+  password: String
+  token: String
+  verificationCode: String
+  createdAt: String
+  updatedAt: String
+}
+
+extend type Query {
+  get_consumer(_id: ID): Consumer
+
+  get_consumers(paginateData: PaginateDataInput): [Consumer]
+
+  get_consumers_count(paginateData: PaginateDataInput): Int
+}
+
+extend type Mutation {
+  create_consumer(
+    address: AddressInput!
+    birthday: String
+    email: String!
+    firstName: String!
+    gender: String!
+    lastName: String!
+    password: String!
+  ): String
+
+  update_consumer(
+    _id: ID!
+    address: AddressInput!
+    birthday: String
+    email: String!
+    firstName: String!
+    gender: String!
+    lastName: String!
+    password: String!
+  ): Consumer
+
+  delete_consumer(_id: ID!): Void
+
+  sign_in_consumer(email: String!, password: String!): String
+
+  forgot_password_consumer(email: String!, type: String!): Void
+
+  reset_password_email_consumer(
+    email: String!
+    newPassword: String!
+    verificationCode: String!
+  ): Consumer
+
+  reset_password_profile_consumer(
+    email: String!
+    newPassword: String!
+    oldPassword: String!
+  ): Consumer
+}

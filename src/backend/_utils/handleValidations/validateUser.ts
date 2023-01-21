@@ -13,7 +13,7 @@ export const validateUser = async ({
   context: Context
   email: string
   shouldExist?: boolean
-  type?: UserType
+  type: UserType
 }): Promise<void> => {
   const admin: Admin = await context.database.admins.findOne({ email })
   const consumer: Consumer = await context.database.consumers.findOne({ email })

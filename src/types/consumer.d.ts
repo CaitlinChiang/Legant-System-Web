@@ -19,13 +19,8 @@ export interface Consumer {
   updatedAt?: Date
 }
 
-export interface SignInConsumer {
-  email: string
-  password: string
-}
-
 export interface GetConsumer {
-  _id: ObjectId
+  _id?: ObjectId
 }
 
 export interface GetConsumers {
@@ -34,7 +29,7 @@ export interface GetConsumers {
 
 export interface CreateConsumer {
   address?: CreateAddress
-  birthday: Date
+  birthday?: Date
   email: string
   firstName: string
   gender: Gender
@@ -46,7 +41,7 @@ export interface CreateConsumer {
 export interface UpdateConsumer {
   _id: ObjectId
   addressId: ObjectId
-  birthday: Date
+  birthday?: Date
   email: string
   firstName: string
   gender: Gender

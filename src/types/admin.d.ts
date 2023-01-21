@@ -13,13 +13,8 @@ export interface Admin {
   updatedAt?: Date
 }
 
-export interface SignInAdmin {
-  email: string
-  password: string
-}
-
 export interface GetAdmin {
-  _id: ObjectId
+  _id?: ObjectId
 }
 
 export interface GetAdmins {

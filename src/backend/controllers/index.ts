@@ -21,7 +21,8 @@ export const buildDataloaders = (db: Database): Dataloaders => ({
   addresses: addresses.dataloaders(db),
   consumers: consumers.dataloaders(db),
   payments: payments.dataloaders(db),
-  products: products.dataloaders(db)
+  products: products.dataloaders(db),
+  suppliers: suppliers.dataloaders(db)
 })
 
 export const typeDefs = [

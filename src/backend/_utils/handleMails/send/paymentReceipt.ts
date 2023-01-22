@@ -52,8 +52,7 @@ export const sendPaymentReceipt = async (
       address.postalCode
     }", "street": "${address.street}", "items": ${
       items.slice(0, -2) + ']'
-    }, "payment": { "amountDue": "${payment.amountDue}", "shippingFee": "${
-      payment.shippingFee
+    }, "payment": { "amountDue": "${payment.amountDue}"
     }", "total": "${formatPrice(payment.amountDue + payment.shippingFee)}" } }`,
     Source: 'legant.co@gmail.com',
     ReplyToAddresses: []

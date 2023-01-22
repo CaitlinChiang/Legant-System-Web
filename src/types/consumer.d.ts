@@ -5,7 +5,7 @@ import { Gender } from '../enums/gender'
 
 export interface Consumer {
   _id?: ObjectId
-  address: Address
+  address?: Address
   addressId?: ObjectId
   birthday?: Date
   email?: string

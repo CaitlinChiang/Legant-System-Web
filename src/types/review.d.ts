@@ -1,8 +1,10 @@
 import { ObjectId } from 'mongodb'
+import { Consumer } from './consumer'
 import { PaginateDataArgs } from './common/paginateData'
 
 export interface Review {
   _id?: ObjectId
+  consumer?: Consumer
   consumerId?: ObjectId
   review?: string
   createdAt?: Date

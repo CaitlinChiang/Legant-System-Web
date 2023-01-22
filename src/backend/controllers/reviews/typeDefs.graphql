@@ -1,5 +1,6 @@
 type Review {
   _id: ID
+  consumer: Consumer
   consumerId: ID
   review: String
   createdAt: String

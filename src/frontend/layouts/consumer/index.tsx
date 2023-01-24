@@ -1,8 +1,8 @@
 import { NextPage } from 'next'
 import { ReactElement, FunctionComponent, useState } from 'react'
-import { Box, Container, Typography, useMediaQuery } from '@mui/material'
+import { Box, Typography, useMediaQuery } from '@mui/material'
 import { theme } from '../../themes'
-import { MainWrapper, PageWrapper } from '../common'
+import { MainWrapper } from '../common'
 import Navbar from './Navbar'
 // import MobileNavbar from './MobileNavbar'
 import Footer from './Footer'
@@ -25,31 +25,27 @@ export default (Page: FunctionComponent, { title }: { title?: string }) =>
           {/* {isMobile && (
             <MobileNavbar open={mobileOpen} onClose={() => setMobileOpen(false)} />
           )} */}
-          <PageWrapper>
-            <Container maxWidth={false}>
-              <Box sx={{ minHeight: 'calc(100vh - 170px)' }}>
-                <Box sx={{ paddingLeft: 2, marginBottom: 1 }}>
-                  <BreadCrumbs />
-                </Box>
-                <Typography sx={{ paddingLeft: 2, marginBottom: 3 }} variant={'h1'}>
-                  {title}
-                </Typography>
-                <Page />
-              </Box>
-              <Footer
-                sx={{
-                  bgcolor: theme.palette.primary.main,
-                  paddingTop: 1,
-                  position: 'absolute',
-                  left: 0,
-                  bottom: 0,
-                  right: 0,
-                  height: '50px',
-                  textAlign: 'center'
-                }}
-              />
-            </Container>
-          </PageWrapper>
+          <Box sx={{ minHeight: 'calc(100vh - 170px)' }}>
+            <Box sx={{ paddingLeft: 2, marginBottom: 1 }}>
+              <BreadCrumbs />
+            </Box>
+            <Typography sx={{ paddingLeft: 2, marginBottom: 3 }} variant={'h1'}>
+              {title}
+            </Typography>
+            <Page />
+          </Box>
+          <Footer
+            sx={{
+              bgcolor: theme.palette.primary.main,
+              paddingTop: 1,
+              position: 'fixed',
+              left: 0,
+              bottom: 0,
+              right: 0,
+              height: '50px',
+              textAlign: 'center'
+            }}
+          />
         </MainWrapper>
       </>
     )

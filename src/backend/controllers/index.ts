@@ -4,6 +4,7 @@ import { Dataloaders } from '../../types/setup/dataloaders'
 import _common from './_common'
 import addresses from './addresses'
 import admins from './admins'
+import cart from './cart'
 import consumers from './consumers'
 import orders from './orders'
 import packs from './packages'
@@ -31,6 +32,7 @@ export const typeDefs = [
   _common.typeDefs,
   addresses.typeDefs,
   admins.typeDefs,
+  cart.typeDefs,
   consumers.typeDefs,
   orders.typeDefs,
   packs.typeDefs,
@@ -43,6 +45,7 @@ export const typeDefs = [
 export const resolvers = [
   _common.resolvers,
   admins.resolvers,
+  cart.resolvers,
   consumers.resolvers,
   orders.resolvers,
   packs.resolvers,

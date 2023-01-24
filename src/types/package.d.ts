@@ -1,13 +1,16 @@
 import { ObjectId } from 'mongodb'
 import { Product } from './product'
+import { Collection } from '../enums/collections'
 
 export interface Package {
   _id?: ObjectId
-  consumerId?: ObjectId
+  collection?: Collection
   items?: PackageItem[]
+  name?: string
   quantity?: number
+  showPublic?: boolean
+  stockQuantity?: number
   totalPrice?: number
-  updatedAt?: Date
 }
 
 export interface PackageItem {
@@ -17,19 +20,25 @@ export interface PackageItem {
   totalPrice?: number
 }
 
-export interface AddPackageItem {
-  item: PackageItem
-  updatedAt?: Date
+export interface CreatePackage {
+  collection: Collection
+  items: PackageItem[]
+  name: string
+  showPublic: boolean
+  stockQuantity: number
 }
 
-export interface UpdatePackageItemQty {
-  price: number
-  productId: ObjectId
-  quantity: number
-  updatedAt?: Date
+export interface UpdatePackage {
+  collection: Collection
+  name: string
+  showPublic: boolean
+  stockQuantity: number
+}
+
+export interface AddPackageItem {
+  item: PackageItem
 }
 
 export interface RemovePackageItem {
   productId: ObjectId
-  updatedAt?: Date
 }

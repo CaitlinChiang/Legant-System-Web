@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongodb'
 import { Address } from './address'
+import { CartItem } from './cart'
 import { Consumer } from './consumer'
-import { PackageItem } from './package'
 import { Payment, CreatePayment } from './payment'
 import { DateRange } from './common/dateRange'
 import { PaginateDataArgs } from './common/paginateData'
@@ -13,7 +13,7 @@ export interface Order {
   addressId?: ObjectId
   consumer?: Consumer
   consumerId?: ObjectId
-  items?: PackageItem[]
+  items?: CartItem[]
   itemsQuantity?: number
   payment?: Payment
   paymentId?: ObjectId
@@ -32,7 +32,7 @@ export interface GetOrders {
 export interface CreateOrder {
   addressId: ObjectId
   consumerId?: ObjectId
-  items: PackageItem[]
+  items: CartItem[]
   payment: CreatePayment
   status?: OrderStatus
   createdAt?: Date

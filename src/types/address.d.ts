@@ -20,3 +20,7 @@ export interface UpdateAddress {
   postalCode: string
   street: string
 }
+
+export interface DeleteAddress {
+  _id: ObjectId
+}

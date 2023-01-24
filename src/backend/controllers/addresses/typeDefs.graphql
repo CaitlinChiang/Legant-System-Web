@@ -4,7 +4,7 @@ type Address {
   postalCode: String
   street: String
 }
-type AddressInput {
+input AddressInput {
   country: String!
   postalCode: String!
   street: String!

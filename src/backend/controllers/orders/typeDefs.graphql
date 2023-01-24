@@ -4,7 +4,7 @@ type Order {
   addressId: ID
   consumer: Consumer
   consumerId: ID
-  items: [PackageItem]
+  items: [CartItem]
   itemsQuantity: Int
   payment: Payment
   paymentId: ID
@@ -32,7 +32,7 @@ extend type Query {
 extend type Mutation {
   create_order(
     addressId: ID!
-    items: [PackageItemInput]!
+    items: [CartItemInput]!
     payment: PaymentInput!
   ): Void
 

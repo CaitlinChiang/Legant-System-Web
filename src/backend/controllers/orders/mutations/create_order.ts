@@ -6,7 +6,7 @@ import { StockQuantityAction } from '../../../../enums/stockQuantity'
 import { MutateAction } from '../../../../enums/mutateAction'
 import { mutateArgs } from '../../../_utils/handleArgs/mutateArgs'
 import { createPayment } from '../../payments/mutations/create_payment'
-import { emptyPackage } from '../../packages/mutations/empty_package'
+import { emptyCart } from '../../cart/mutations/empty_cart'
 import { updateStockQuantity } from '../../../_utils/handleData/updateStockQuantity'
 
 export default async (
@@ -26,7 +26,7 @@ export default async (
 
   await createPayment(context, orderId, payment)
 
-  await emptyPackage(context)
+  await emptyCart(context)
 
   await updateStockQuantity(context, StockQuantityAction.SUBTRACT, args.items)
 }

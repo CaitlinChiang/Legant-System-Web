@@ -1,11 +1,11 @@
 import { Context } from '../../../types/setup/context'
 import { Address } from '../../../types/address'
+import { CartItem } from '../../../types/cart'
 import { Consumer } from '../../../types/consumer'
-import { PackageItem } from '../../../types/package'
 import { Order } from '../../../types/order'
 import { Payment } from '../../../types/payment'
 import { formatDateTime } from '../../_utils/handleFormats/formatDateTime'
-import { returnPackageItems } from '../../_utils/handleData/returnPackageItems'
+import { returnCartItems } from '../../_utils/handleData/returnCartItems'
 
 export default {
   Order: {
@@ -43,15 +43,15 @@ export default {
       order: Order,
       _args: undefined,
       context: Context
-    ): Promise<PackageItem[]> => {
-      return await returnPackageItems(context, order?.items)
+    ): Promise<CartItem[]> => {
+      return await returnCartItems(context, order?.items)
     },
 
     itemsQuantity: async (order: Order): Promise<number> => {
       if (!order?.items || order?.items?.length === 0) return 0
 
       const itemsQuantity: number = order.items.reduce(
-        (totalQuantity: number, currentProduct: PackageItem): number => {
+        (totalQuantity: number, currentProduct: CartItem): number => {
           return totalQuantity + currentProduct.quantity
         },
         0

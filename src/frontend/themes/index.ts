@@ -28,18 +28,13 @@ const baseTheme = {
       light: '#fdf3f5'
     },
     info: {
-      main: '#1e4db7',
-      light: '#a7e3f4'
+      main: '#AE992F'
     },
     error: {
-      main: '#e46a76',
-      light: '#fdf3f5',
-      dark: '#e45a68'
+      main: '#e45a68'
     },
     warning: {
-      main: '#fec90f',
-      light: '#fff4e5',
-      dark: '#dcb014',
+      main: '#fff4e5',
       contrastText: '#ffffff'
     },
     text: {
@@ -47,20 +42,11 @@ const baseTheme = {
       secondary: '#777e89',
       danger: '#fc4b6c'
     },
-    grey: {
-      A100: '#ecf0f2',
-      A200: '#99abb4',
-      A400: '#767e89',
-      A700: '#e6f4ff'
-    },
     action: {
       disabledBackground: 'rgba(73,82,88,0.12)',
       hoverOpacity: 0.02,
       hover: 'rgba(0, 0, 0, 0.03)'
     }
-  },
-  shape: {
-    borderRadius: 5
   },
   mixins: {
     toolbar: {

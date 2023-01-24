@@ -1,14 +1,14 @@
 import { NextPage } from 'next'
 import { ReactElement } from 'react'
-import { Box, Typography } from '@mui/material'
+import Home from '../components/home'
 import layout from '../layouts/consumer'
 
-const Home: NextPage = (): ReactElement => {
+const HomePage: NextPage = (): ReactElement => {
   return (
     <>
-      
+      <Home />
     </>
   )
 }
 
-export default layout(Home, {})
+export default layout(HomePage, {})

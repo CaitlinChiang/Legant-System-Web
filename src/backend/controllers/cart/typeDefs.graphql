@@ -1,0 +1,35 @@
+type Cart {
+  _id: ID
+  consumerId: ID
+  items: [CartItem]
+  quantity: Int
+  totalPrice: Float
+}
+
+type CartItem {
+  package: Package
+  packageId: ID
+  quantity: Int
+  totalPrice: Float
+}
+input CartItemInput {
+  packageId: ID!
+  quantity: Int!
+  totalPrice: Float!
+}
+
+extend type Query {
+  get_cart: Cart
+}
+
+extend type Mutation {
+  add_cart_item(item: CartItemInput!): Void
+
+  update_cart_item_qty(
+    price: Float!
+    packageId: ID!
+    quantity: Int!
+  ): Cart
+
+  remove_cart_item(packageId: ID!): Cart
+}

@@ -1,6 +1,9 @@
 type Package {
   _id: ID
   collection: String
+  description: String
+  discount: Float
+  imageUrl: String
   items: [PackageItem]
   name: String
   quantity: Int
@@ -30,11 +33,11 @@ extend type Query {
 }
 
 extend type Mutation {
-  create_package(collection: String!, items: [PackageItemInput]!, name: String!, showPublic: Boolean!, stockQuantity: Int!): Void
+  create_package(collection: String!, description: String!, discount: Float, image: Upload!, items: [PackageItemInput]!, name: String!, showPublic: Boolean!, stockQuantity: Int!): Void
 
-  update_package(_id: ID!, collection: String!, name: String!, showPublic: Boolean!, stockQuantity: Int!): Package
+  update_package(_id: ID!, collection: String!, description: String!, discount: Float, image: Upload!, imageUrl: String!, name: String!, showPublic: Boolean!, stockQuantity: Int!): Package
 
-  delete_package(_id: ID!): Void
+  delete_package(_id: ID!, imageUrl: String!): Void
 
   add_package_item(item: PackageItemInput!): Void
 

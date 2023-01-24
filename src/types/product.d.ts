@@ -2,6 +2,7 @@ import { ObjectId } from 'mongodb'
 import { Supplier } from './supplier'
 import { DateRange } from './common/dateRange'
 import { PaginateDataArgs } from './common/paginateData'
+import { StockQuantity } from './common/stockQuantity'
 import { Category } from '../enums/categories'
 
 export interface Product {

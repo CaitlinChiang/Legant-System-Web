@@ -14,14 +14,23 @@ export const uploadImage = async (args: UploadImageArgs): Promise<string> => {
 
 // GENERATE FILE NAMES
 const assignFileName = (args: UploadImageArgs) => {
-  const { imageType, orderId, productName } = args
+  const { imageType, name, orderId } = args
 
   switch (imageType) {
+    case UploadImageType.PACKAGE:
+      return generatePackageFileName(name)
     case UploadImageType.PAYMENT:
       return generatePaymentImageFileName(orderId)
     case UploadImageType.PRODUCT:
-      return generateProductImageFileName(productName)
+      return generateProductImageFileName(name)
   }
+}
+
+const generatePackageFileName = (name: string) => {
+  const folderName = 'packages/'
+  const modifiedPackageName = name.replaceAll(' ', '_').toLowerCase()
+
+  return folderName.concat(modifiedPackageName)
 }
 
 const generatePaymentImageFileName = (orderId: string) => {
@@ -31,9 +40,9 @@ const generatePaymentImageFileName = (orderId: string) => {
   return folderName.concat(modifiedPaymentId)
 }
 
-const generateProductImageFileName = (productName: string) => {
+const generateProductImageFileName = (name: string) => {
   const folderName = 'products/'
-  const modifiedProductName = productName.replaceAll(' ', '_').toLowerCase()
+  const modifiedProductName = name.replaceAll(' ', '_').toLowerCase()
 
   return folderName.concat(modifiedProductName)
 }

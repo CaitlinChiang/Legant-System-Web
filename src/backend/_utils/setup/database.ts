@@ -2,6 +2,7 @@ import { Db } from 'mongodb'
 import { Database } from '../../../types/setup/database'
 import { Address } from '../../../types/address'
 import { Admin } from '../../../types/admin'
+import { Cart } from '../../../types/cart'
 import { Consumer } from '../../../types/consumer'
 import { Order } from '../../../types/order'
 import { Package } from '../../../types/package'
@@ -14,6 +15,7 @@ export default (db: Db): Database => {
   return {
     addresses: db.collection<Address>('addresses'),
     admins: db.collection<Admin>('admins'),
+    carts: db.collection<Cart>('carts'),
     consumers: db.collection<Consumer>('consumers'),
     orders: db.collection<Order>('orders'),
     packages: db.collection<Package>('packages'),

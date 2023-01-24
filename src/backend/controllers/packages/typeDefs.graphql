@@ -1,10 +1,12 @@
 type Package {
   _id: ID
-  consumerId: ID
+  collection: String
   items: [PackageItem]
+  name: String
   quantity: Int
+  showPublic: Boolean
+  stockQuantity: Int
   totalPrice: Float
-  updatedAt: String
 }
 
 type PackageItem {
@@ -20,17 +22,21 @@ input PackageItemInput {
 }
 
 extend type Query {
-  get_package: Package
+  get_package(_id: ID!): Package
+
+  get_packages(paginateData: PaginateDataInput): [Package]
+
+  get_packages_count(paginateData: PaginateDataInput): Int
 }
 
 extend type Mutation {
-  add_package_item(item: PackageItemInput!): Void
+  create_package(collection: String!, items: [PackageItemInput]!, name: String!, showPublic: Boolean!, stockQuantity: Int!): Void
 
-  edit_item_quantity(
-    price: Float!
-    productId: ID!
-    quantity: Int!
-  ): Package
+  update_package(_id: ID!, collection: String!, name: String!, showPublic: Boolean!, stockQuantity: Int!): Package
+
+  delete_package(_id: ID!): Void
+
+  add_package_item(item: PackageItemInput!): Void
 
   remove_package_item(productId: ID!): Package
 }

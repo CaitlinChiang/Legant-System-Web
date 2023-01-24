@@ -1,13 +1,12 @@
 import { Context } from '../../../../types/setup/context'
-import { Package } from '../../../../types/package'
+import { Package, GetPackage } from '../../../../types/package'
+import { returnData } from '../../../_utils/handleData/returnData'
 
 export default async (
   _root: undefined,
-  args: undefined,
+  args: GetPackage,
   context: Context
 ): Promise<Package> => {
-  const pack: Package = await context.database.packages.findOne({
-    consumerId: context.consumerId
-  })
+  const pack: Package = await returnData(context, args, 'packages')
   return pack
 }

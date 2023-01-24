@@ -1,7 +1,6 @@
 import { Context } from '../../../types/setup/context'
 import { Package, PackageItem } from '../../../types/package'
 import { returnPackageItems } from '../../_utils/handleData/returnPackageItems'
-import { formatDateTime } from '../../_utils/handleFormats/formatDateTime'
 
 export default {
   Package: {
@@ -35,10 +34,6 @@ export default {
         0
       )
       return itemsTotalPrice
-    },
-
-    updatedAt: async (pack: Package): Promise<string> => {
-      return formatDateTime(pack?.updatedAt, true)
     }
   }
 }

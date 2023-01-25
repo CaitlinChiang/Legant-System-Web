@@ -9,7 +9,7 @@ const typography = {
   },
   h1: {
     fontWeight: 500,
-    fontSize: '70px',
+    fontSize: '60px',
     lineHeight: '1.5'
   },
   h2: {

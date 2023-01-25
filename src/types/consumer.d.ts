@@ -46,7 +46,6 @@ export interface UpdateConsumer {
   firstName: string
   gender: Gender
   lastName: string
-  password: string
   updatedAt?: Date
 }
 

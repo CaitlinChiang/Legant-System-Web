@@ -34,7 +34,6 @@ export interface UpdateAdmin {
   email: string
   firstName: string
   lastName: string
-  password: string
   updatedAt?: Date
 }
 

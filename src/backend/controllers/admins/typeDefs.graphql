@@ -31,7 +31,6 @@ extend type Mutation {
     email: String!
     firstName: String!
     lastName: String!
-    password: String!
   ): Admin
 
   delete_admin(_id: ID!): Void

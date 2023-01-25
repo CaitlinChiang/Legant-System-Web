@@ -41,7 +41,6 @@ extend type Mutation {
     firstName: String!
     gender: String!
     lastName: String!
-    password: String!
   ): Consumer
 
   delete_consumer(_id: ID!): Void

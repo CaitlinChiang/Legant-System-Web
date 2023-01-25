@@ -25,6 +25,8 @@ export default {
     },
 
     totalPrice: async (pack: Package): Promise<number> => {
+      if (pack?.totalPrice) return pack.totalPrice
+
       if (!pack?.items || pack?.items?.length === 0) return 0
 
       const itemsTotalPrice: number = pack.items.reduce(

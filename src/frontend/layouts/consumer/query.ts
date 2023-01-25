@@ -11,9 +11,9 @@ export const GetConsumer = gql`
   }
 `
 
-export const GetPackage = gql`
+export const GetCart = gql`
   query {
-    get_package {
+    get_cart {
       quantity
     }
   }

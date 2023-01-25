@@ -27,9 +27,23 @@ input PackageItemInput {
 extend type Query {
   get_package(_id: ID!): Package
 
-  get_packages(paginateData: PaginateDataInput): [Package]
+  get_packages(
+    collections: [String]
+    dateRange: DateRangeInput
+    discount: Boolean
+    paginateData: PaginateDataInput
+    showPublic: Boolean
+    stockQuantity: StockQuantityInput
+  ): [Package]
 
-  get_packages_count(paginateData: PaginateDataInput): Int
+  get_packages_count(
+    collections: [String]
+    dateRange: DateRangeInput
+    discount: Boolean
+    paginateData: PaginateDataInput
+    showPublic: Boolean
+    stockQuantity: StockQuantityInput
+  ): Int
 }
 
 extend type Mutation {

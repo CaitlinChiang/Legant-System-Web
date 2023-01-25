@@ -1,3 +1,4 @@
+import { Collection } from '../../../enums/collections'
 import { OrderStatus } from '../../../enums/orderStatus'
 import { correctArgs } from './correctArgs'
 import { formatDateRange } from '../handleFormats/formatDateRange'
@@ -5,7 +6,7 @@ import { stockQuantityArgs } from './stockQuantityArgs'
 
 export const queryArgs = (args: any): any => {
   const {
-    categories,
+    collections,
     dateRange,
     discount,
     paginateData,
@@ -22,9 +23,9 @@ export const queryArgs = (args: any): any => {
   const queryArgs: any = { ...commonArgs }
   correctArgs(queryArgs)
 
-  if (categories?.length > 0) {
-    queryArgs.category = {
-      $in: categories.map((category: string): string => category)
+  if (collections?.length > 0) {
+    queryArgs.collection = {
+      $in: collections.map((collection: Collection): Collection => collection)
     }
   }
 

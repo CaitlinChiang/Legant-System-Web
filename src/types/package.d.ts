@@ -30,7 +30,7 @@ export interface GetPackage {
 }
 
 export interface GetPackages {
-  categories?: string[]
+  collections?: Collection[]
   dateRange?: DateRange
   discount?: boolean
   paginateData?: PaginateDataArgs

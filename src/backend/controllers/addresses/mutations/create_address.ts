@@ -1,10 +1,16 @@
+import { ObjectId } from 'mongodb'
 import { Context } from '../../../../types/setup/context'
 import { CreateAddress } from '../../../../types/address'
-import { createData } from '../../../_utils/handleData/createData'
+import { mutateArgs } from '../../../_utils/handleArgs/mutateArgs'
+import { MutateAction } from '../../../../enums/mutateAction'
 
 export const createAddress = async (
   context: Context,
   args: CreateAddress
-): Promise<void> => {
-  await createData(context, args, 'addresses')
+): Promise<ObjectId> => {
+  const addressId: ObjectId = await context.database.addresses
+    .insertOne(mutateArgs(args, MutateAction.CREATE))
+    .then((data) => data.insertedId)
+
+  return addressId
 }

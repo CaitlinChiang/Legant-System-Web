@@ -28,36 +28,36 @@ const Home = (): ReactElement => {
           <Divider
             sx={{
               color: '#C3A65E',
-              border: '3px solid',
-              marginBottom: 10,
-              width: '70%'
+              border: '2px solid',
+              marginBottom: 8,
+              width: '75%'
             }}
           />
           <Typography variant={'h1'} style={{ marginBottom: 20 }}>
             {'L E G A N T'}
           </Typography>
-          <Typography variant={'h2'}>{'GIFTING STUDIO'}</Typography>
+          <Typography variant={'h3'}>{'GIFTING STUDIO'}</Typography>
           <Divider
             sx={{
               color: '#C3A65E',
-              border: '3px solid',
-              marginTop: 10,
+              border: '2px solid',
+              marginTop: 8,
               marginBottom: 3,
-              width: '70%'
+              width: '75%'
             }}
           />
-          <Typography variant={'h2'}>
+          <Typography variant={'h3'}>
             {'Gift-giving made simple and stress-free.'}
           </Typography>
           <Button
             onClick={(): void => {
-              router.push('/shop')
+              router.push('/packages')
             }}
             style={{
-              fontSize: 20,
+              fontSize: 17,
               marginTop: 100,
-              paddingLeft: 100,
-              paddingRight: 100,
+              paddingLeft: 90,
+              paddingRight: 90,
               background: '#44402D',
               border: '1px solid #999687'
             }}

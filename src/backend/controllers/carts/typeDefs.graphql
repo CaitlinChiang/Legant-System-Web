@@ -25,11 +25,7 @@ extend type Query {
 extend type Mutation {
   add_cart_item(item: CartItemInput!): Void
 
-  update_cart_item_qty(
-    price: Float!
-    packageId: ID!
-    quantity: Int!
-  ): Cart
+  update_cart_item_qty(price: Float!, packageId: ID!, quantity: Int!): Cart
 
   remove_cart_item(packageId: ID!): Cart
 }

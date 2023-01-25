@@ -30,11 +30,7 @@ extend type Query {
 }
 
 extend type Mutation {
-  create_order(
-    addressId: ID!
-    items: [CartItemInput]!
-    payment: PaymentInput!
-  ): Void
+  create_order(addressId: ID!, items: [CartItemInput]!, payment: PaymentInput!): Void
 
   update_order(_id: ID!, status: String!): Order
 

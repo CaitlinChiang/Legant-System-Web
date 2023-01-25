@@ -19,9 +19,23 @@ extend type Query {
 }
 
 extend type Mutation {
-  create_supplier(ageMax: Int!, ageMin: Int!, categories: [String], email: String!, genders: [String]!, name: String!): Void
+  create_supplier(
+    ageMax: Int!
+    ageMin: Int!
+    categories: [String]
+    email: String!
+    genders: [String]!
+    name: String!
+  ): Void
 
-  update_supplier(ageMax: Int!, ageMin: Int!, categories: [String], email: String!, genders: [String]!, name: String!): Supplier
+  update_supplier(
+    ageMax: Int!
+    ageMin: Int!
+    categories: [String]
+    email: String!
+    genders: [String]!
+    name: String!
+  ): Supplier
 
   delete_supplier(_id: ID!): Void
 }

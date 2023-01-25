@@ -6,7 +6,7 @@ import { StockQuantityAction } from '../../../../enums/stockQuantity'
 import { MutateAction } from '../../../../enums/mutateAction'
 import { mutateArgs } from '../../../_utils/handleArgs/mutateArgs'
 import { createPayment } from '../../payments/mutations/create_payment'
-import { emptyCart } from '../../cart/mutations/empty_cart'
+import { emptyCart } from '../../carts/mutations/empty_cart'
 import { updateStockQuantity } from '../../../_utils/handleData/updateStockQuantity'
 
 export default async (

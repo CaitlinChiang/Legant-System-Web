@@ -16,6 +16,10 @@ export interface CartItem {
   totalPrice?: number
 }
 
+export interface DeleteCart {
+  consumerId: ObjectId
+}
+
 export interface AddCartItem {
   item: CartItem
 }

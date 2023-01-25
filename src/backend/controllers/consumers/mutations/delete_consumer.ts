@@ -2,7 +2,7 @@ import { Context } from '../../../../types/setup/context'
 import { DeleteConsumer } from '../../../../types/consumer'
 import { deleteData } from '../../../_utils/handleData/deleteData'
 import { deleteAddress } from '../../addresses/mutations/delete_address'
-import { deleteCart } from '../../cart/mutations/delete_cart'
+import { deleteCart } from '../../carts/mutations/delete_cart'
 
 export default async (
   _root: undefined,

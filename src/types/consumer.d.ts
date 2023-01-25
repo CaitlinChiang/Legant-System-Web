@@ -52,4 +52,5 @@ export interface UpdateConsumer {
 
 export interface DeleteConsumer {
   _id: ObjectId
+  addressId: ObjectId
 }

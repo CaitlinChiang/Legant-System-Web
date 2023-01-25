@@ -1,5 +1,5 @@
 import { Context } from '../../../../types/setup/context'
-import { GetReviews } from 'types/review'
+import { GetReviews } from '../../../../types/review'
 import { returnDataCount } from '../../../_utils/handleData/returnDataCount'
 
 export default async (

@@ -38,7 +38,7 @@ extend type Mutation {
 
   sign_in_admin(email: String!, password: String!): String
 
-  forgot_password_admin(email: String!, type: String!): Void
+  forgot_password_admin(email: String!): Void
 
   reset_password_email_admin(
     email: String!

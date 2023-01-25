@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongodb'
+import { Database } from '../../../types/setup/database'
 import { Admin } from '../../../types/admin'
 import { Consumer } from '../../../types/consumer'
-import { Database } from '../../../types/setup/database'
 import { generateJWT, verifyJWT } from './jwt'
 
 export default async (

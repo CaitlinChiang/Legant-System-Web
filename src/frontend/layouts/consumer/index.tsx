@@ -6,7 +6,7 @@ import { MainWrapper } from '../common'
 import Navbar from './Navbar'
 // import MobileNavbar from './MobileNavbar'
 import Footer from './Footer'
-import BreadCrumbs from '../../components/_common/BreadcrumbsComponent'
+import BreadCrumbs from '../../components/_common/Breadcrumbs'
 
 export default (Page: FunctionComponent, { title }: { title?: string }) =>
   (): FunctionComponent | NextPage | ReactElement => {

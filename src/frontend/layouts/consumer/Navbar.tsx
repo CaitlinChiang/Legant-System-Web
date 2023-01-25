@@ -2,7 +2,7 @@ import { ReactElement } from 'react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { useQuery } from '@apollo/client'
-import { GetPackage } from './query'
+import { GetCart } from './query'
 import {
   AppBar,
   Badge,
@@ -17,7 +17,7 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'
 import ReceiptIcon from '@mui/icons-material/Receipt'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import MenuIcon from '@mui/icons-material/Menu'
-import { Package } from '../../../types/package'
+import { Cart } from '../../../types/cart'
 import { formatNumber } from '../../_utils/handleFormat/formatNumber'
 
 const globalAny: any = global
@@ -37,10 +37,10 @@ const Navbar = ({
 }): ReactElement => {
   const router = useRouter()
 
-  const { data, refetch } = useQuery(GetPackage)
-  const pack: Package = data?.get_package || {}
+  const { data, refetch } = useQuery(GetCart)
+  const cart: Cart = data?.get_cart || {}
 
-  globalAny.updatePackageQty = (): void => {
+  globalAny.updateCartQty = (): void => {
     refetch()
   }
 
@@ -54,14 +54,14 @@ const Navbar = ({
   const secondaryMenu = [
     {
       icon: (
-        <Badge badgeContent={formatNumber(pack?.quantity)} color={'info'}>
+        <Badge badgeContent={formatNumber(cart?.quantity)} color={'info'}>
           <ShoppingBasketIcon />
         </Badge>
       ),
-      route: '/package'
+      route: '/cart'
     },
     { icon: <ReceiptIcon />, route: '/orders' },
-    { icon: <AccountCircleIcon />, route: '/user/profile' }
+    { icon: <AccountCircleIcon />, route: '/profile' }
   ]
 
   return (

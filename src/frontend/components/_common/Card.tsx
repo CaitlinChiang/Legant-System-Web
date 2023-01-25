@@ -2,15 +2,15 @@ import { ReactElement } from 'react'
 import { useRouter } from 'next/router'
 import { Box, Grid } from '@mui/material'
 
-const CardComponent = ({
+const Card = ({
   content,
   imageAlt,
   imageSource,
   redirectLink
 }: {
   content: ReactElement
-  imageAlt?: string
-  imageSource?: string
+  imageAlt: string
+  imageSource: string
   redirectLink?: { path: string; url: string }
 }): ReactElement => {
   const router = useRouter()
@@ -31,4 +31,4 @@ const CardComponent = ({
   )
 }
 
-export default CardComponent
+export default Card

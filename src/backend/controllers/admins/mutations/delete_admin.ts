@@ -1,10 +1,10 @@
 import { Context } from '../../../../types/setup/context'
-import { DeleteConsumer } from '../../../../types/consumer'
+import { DeleteAdmin } from '../../../../types/admin'
 import { deleteData } from '../../../_utils/handleData/deleteData'
 
 export default async (
   _root: undefined,
-  args: DeleteConsumer,
+  args: DeleteAdmin,
   context: Context
 ): Promise<void> => {
   await deleteData(context, args, 'admins')

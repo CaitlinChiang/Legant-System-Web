@@ -19,3 +19,9 @@ export interface ResetPasswordProfile {
   newPassword: string
   oldPassword: string
 }
+
+export interface JWTArgs {
+  _id: string
+  iat: number
+  exp: number
+}

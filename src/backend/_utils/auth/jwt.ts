@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 import { ObjectId } from 'mongodb'
-import { JWTArgs } from '../../../types/common/jwt'
+import { JWTArgs } from '../../../types/common/account'
 
 const path = require('path')
 require('dotenv').config({ path: path.resolve(__dirname, '../../../../.env') })
